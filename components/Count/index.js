@@ -1,7 +1,10 @@
 import React, { Suspense } from 'react';
 // import PostLazy from '../Post';
+import Spinner from '../Spinner';
 
 const PostLazy = React.lazy(() => import('../Post'));
+
+const isSSR = !(typeof window === "undefined");
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -14,12 +17,12 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
+    // console.log('componentDidMount')
     // this.setState({count: 10});
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log('componentDidUpdate')
+    // console.log('componentDidUpdate')
   }
 
   tang = () => {
@@ -37,13 +40,14 @@ export default class Home extends React.Component {
   }
 
   render() {
+    // alert(isSSR)
     return (
       <div>
         <button onClick={this.tang}>tang 1</button>
         <h3>{this.state.count} --- {this.props.xxx}</h3>
         <button onClick={this.giam}>giam 1</button>
         {this.test}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Spinner />}>
           <PostLazy />
         </Suspense>
       </div>
