@@ -1,23 +1,29 @@
 import React from 'react'
 
-const isSSR = !(typeof window === "undefined");
+const isSSR = (typeof window === "undefined");
 
-export default class Post extends React.Component {
+if(!isSSR) {
+  console.log(document.getElementById('xxx'))
+  console.log(document.getElementById('yyy'))
+}
+
+export default class Spinner extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
+    // console.log(document.getElementById('xxx'))
+    console.log('componentDidMount', 'Spinner');
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount');
+    console.log('componentWillUnmount', 'Spinner');
   }
 
   render() {
     return (
-      <div className={isSSR ? 'server' : 'client'}>Loading...</div>
+      <div id="xxx" className={isSSR ? 'server' : 'client'}>Loading...</div>
     )
   }
 }

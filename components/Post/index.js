@@ -5,9 +5,17 @@ export default class Post extends React.Component {
     super(props);
   }
 
+    componentDidMount() {
+        console.log('componentDidMount', 'Post');
+    }
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount', 'Post');
+    }
+
   render() {
     return (
-      <div>
+      <div id="yyy">
         <p>This is content Post</p>
         <p>This is content Post</p>
         <p>This is content Post</p>

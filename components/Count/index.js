@@ -1,8 +1,26 @@
 import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic'
 // import PostLazy from '../Post';
 import Spinner from '../Spinner';
 
-const PostLazy = React.lazy(() => import('../Post'));
+const promiseTest = () => import('../Post');
+
+const PostLazy = dynamic(() => {
+  console.log(1);
+  return new Promise((resolve, reject) => {
+    console.log(2);
+   setTimeout(() => {
+     console.log(3);
+     resolve(promiseTest())
+   }, 4000);
+  });
+}, {
+  suspense: false,
+  loading: () => <p>Load......</p>,
+  ssr: false
+});
+
+// console.log(PostLazy)
 
 const isSSR = !(typeof window === "undefined");
 
@@ -13,16 +31,6 @@ export default class Home extends React.Component {
       count: 3,
     }
     this.test = 0;
-    console.log('hrhrrhrhrhrh')
-  }
-
-  componentDidMount() {
-    // console.log('componentDidMount')
-    // this.setState({count: 10});
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    // console.log('componentDidUpdate')
   }
 
   tang = () => {
@@ -47,9 +55,9 @@ export default class Home extends React.Component {
         <h3>{this.state.count} --- {this.props.xxx}</h3>
         <button onClick={this.giam}>giam 1</button>
         {this.test}
-        <Suspense fallback={<Spinner />}>
+        {/*<Suspense fallback={<Spinner />}>*/}
           <PostLazy />
-        </Suspense>
+        {/*</Suspense>*/}
       </div>
     )
   }
