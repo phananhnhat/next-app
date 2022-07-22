@@ -30,7 +30,6 @@ export default class Home extends React.Component {
     this.state = {
       count: 3,
     }
-    this.test = 0;
   }
 
   tang = () => {
@@ -48,13 +47,11 @@ export default class Home extends React.Component {
   }
 
   render() {
-    // alert(isSSR)
     return (
       <div>
         <button onClick={this.tang}>tang 1</button>
-        <h3>{this.state.count} --- {this.props.xxx}</h3>
+        <span>{this.state.count}</span>
         <button onClick={this.giam}>giam 1</button>
-        {this.test}
         {/*<Suspense fallback={<Spinner />}>*/}
           <PostLazy />
         {/*</Suspense>*/}
