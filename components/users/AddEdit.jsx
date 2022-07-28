@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-import { Link } from 'components';
+import { Link } from 'components/base';
 import { userService, alertService } from 'services';
 
 export { AddEdit };
@@ -12,8 +12,8 @@ function AddEdit(props) {
     const user = props?.user;
     const isAddMode = !user;
     const router = useRouter();
-    
-    // form validation rules 
+
+    // form validation rules
     const validationSchema = Yup.object().shape({
         firstName: Yup.string()
             .required('First Name is required'),

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.6",
+    "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "express-jwt": "^7.7.5",
     "jsonwebtoken": "^8.5.1",

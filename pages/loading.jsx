@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { Layout } from 'components/users';
 import {useRouter} from 'next/router';
-import {Spinner} from '../components';
+import {Spinner} from 'components/base';
 
 export default Index;
 

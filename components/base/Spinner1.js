@@ -7,7 +7,7 @@ if(!isSSR) {
   console.log(document.getElementById('yyy'))
 }
 
-export default class Spinner extends React.Component {
+export default class Spinner1 extends React.Component {
   constructor(props) {
     super(props);
   }

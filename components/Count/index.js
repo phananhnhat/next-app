@@ -1,16 +1,16 @@
 import React, { Suspense } from 'react';
 import dynamic from 'next/dynamic'
 // import PostLazy from '../Post';
-import Spinner from '../Spinner';
+import {Spinner} from 'components/base';
 
 const promiseTest = () => import('../Post');
 
 const PostLazy = dynamic(() => {
-  console.log(1);
+  // console.log(1);
   return new Promise((resolve, reject) => {
-    console.log(2);
+    // console.log(2);
    setTimeout(() => {
-     console.log(3);
+     // console.log(3);
      resolve(promiseTest())
    }, 4000);
   });

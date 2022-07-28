@@ -6,11 +6,11 @@ export default class Post extends React.Component {
   }
 
     componentDidMount() {
-        console.log('componentDidMount', 'Post');
+        // console.log('componentDidMount', 'Post');
     }
 
     componentWillUnmount() {
-        console.log('componentWillUnmount', 'Post');
+        // console.log('componentWillUnmount', 'Post');
     }
 
   render() {
