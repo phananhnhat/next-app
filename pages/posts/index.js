@@ -43,7 +43,7 @@ const Home = ({posts, error}) => {
       <div className={styles.container}>
         {
           posts.length > 0 && posts.map(({title, content}) => (
-            <div>
+            <div key={title}>
               <h4>{title}</h4>
               <p>{content}</p>
             </div>

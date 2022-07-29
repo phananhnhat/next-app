@@ -23,6 +23,7 @@ function NavAdmin() {
         <NavLink href="/admin" className="nav-item nav-link">Dashboard</NavLink>
         <NavLink href="/admin/users" className="nav-item nav-link">Users</NavLink>
         <a onClick={logout} className="nav-item nav-link">Logout</a>
+        <NavLink href="/ad-csr" className="nav-item nav-link">Admin CSR</NavLink>
       </div>
     </nav>
   );

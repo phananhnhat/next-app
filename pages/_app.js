@@ -62,7 +62,7 @@ function MyApp({Component, pageProps}) {
       setAuthorized(true);
     } else {
       router.push({
-        pathname: 'admin/login',
+        pathname: '/admin/login',
         query: {returnUrl: url}
       });
     }
