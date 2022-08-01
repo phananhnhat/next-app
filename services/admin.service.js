@@ -4,7 +4,7 @@ import Router from 'next/router';
 import {fetchWrapper} from 'helpers';
 
 const {publicRuntimeConfig} = getConfig();
-const baseUrl = `${publicRuntimeConfig.apiUrl}/users`;
+const baseUrl = `${publicRuntimeConfig.apiUrl}/admins`;
 let userObject = process.browser && JSON.parse(localStorage.getItem('user'));
 
 export const userService = {

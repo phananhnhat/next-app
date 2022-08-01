@@ -1,11 +1,11 @@
 [
     {
         "firstName": "Nhat",
-        "lastName": "Phan Anh",
-        "username": "admin",
-        "hash": "$2a$10$svB2G0XerrpSPCejFTeDQOCSlLoJzDOf/ScoAIWHHVhg9MHSYyvbS",
+        "lastName": "PA1",
+        "username": "user1",
+        "hash": "$2a$10$znpRhyUgaes9YdzFtz6E5exKVzczQlBR4qpE8AtRaEKM/Fb0FCZX.",
         "id": 1,
-        "dateCreated": "2022-07-20T07:20:33.525Z",
-        "dateUpdated": "2022-07-20T07:20:33.525Z"
+        "dateCreated": "2022-08-01T08:54:00.251Z",
+        "dateUpdated": "2022-08-01T08:54:00.251Z"
     }
 ]

@@ -30,6 +30,6 @@ function warn(message, options) {
 }
 
 // core alert method
-function showAlert(alert) {
-    alert(alert.type + ': ' + alert.message);
+function showAlert(alertObject) {
+    alert(alertObject.type + ': ' + alertObject.message);
 }

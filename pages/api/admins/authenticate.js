@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 import getConfig from 'next/config';
 
 import { apiHandler } from 'helpers/api';
-import { usersRepo } from 'helpers/repos';
+import { adminsRepo } from 'helpers/repos';
 
 const { serverRuntimeConfig } = getConfig();
 
@@ -13,7 +13,7 @@ export default apiHandler({
 
 function authenticate(req, res) {
     const { username, password } = req.body;
-    const user = usersRepo.find(u => u.username === username);
+    const user = adminsRepo.find(u => u.username === username);
 
     // validate
     if (!(user && bcrypt.compareSync(password, user.hash))) {

@@ -41,7 +41,7 @@ function _delete(id) {
     // filter out deleted user and save
     users = users.filter(x => x.id.toString() !== id.toString());
     saveData();
-    
+
 }
 
 // private helper functions

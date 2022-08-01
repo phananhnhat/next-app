@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 
 import { apiHandler } from 'helpers/api';
 import { omit } from 'helpers/api';
-import { usersRepo } from 'helpers/repos';
+import { adminsRepo } from 'helpers/repos';
 
 export default apiHandler({
     get: getById,
@@ -11,7 +11,7 @@ export default apiHandler({
 });
 
 function getById(req, res) {
-    const user = usersRepo.getById(req.query.id);
+    const user = adminsRepo.getById(req.query.id);
 
     if (!user) throw 'User Not Found';
 
@@ -19,7 +19,7 @@ function getById(req, res) {
 }
 
 function update(req, res) {
-    const user = usersRepo.getById(req.query.id);
+    const user = adminsRepo.getById(req.query.id);
 
     if (!user) throw 'User Not Found';
 
@@ -27,7 +27,7 @@ function update(req, res) {
     const { password, ...params } = req.body;
 
     // validate
-    if (user.username !== params.username && usersRepo.find(x => x.username === params.username))
+    if (user.username !== params.username && adminsRepo.find(x => x.username === params.username))
         throw `User with the username "${params.username}" already exists`;
 
     // only update hashed password if entered
@@ -35,11 +35,11 @@ function update(req, res) {
         user.hash = bcrypt.hashSync(password, 10);
     }
 
-    usersRepo.update(req.query.id, params);
+    adminsRepo.update(req.query.id, params);
     return res.status(200).json({});
 }
 
 function _delete(req, res) {
-    usersRepo.delete(req.query.id);
+    adminsRepo.delete(req.query.id);
     return res.status(200).json({});
 }
