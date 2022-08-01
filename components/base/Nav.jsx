@@ -18,7 +18,7 @@ function Nav() {
         <NavLink href="/register" className="nav-item nav-link">Register</NavLink>
         <NavLink href="/login" className="nav-item nav-link">Login</NavLink>
         <a onClick={logout} className="nav-item nav-link">Logout</a>
-        <NavLink href="/admin" className="nav-item nav-link">Admin</NavLink>
+        <NavLink href="/admin" className="nav-item nav-link">Go to Admin Page</NavLink>
       </div>
     </nav>
   );

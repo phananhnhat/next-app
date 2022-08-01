@@ -10,7 +10,6 @@ function apiHandler(handler, authentication = true) {
         if (!handler[method])
             return res.status(405).end(`Method ${req.method} Not Allowed`);
 
-        console.log('123123')
         try {
             // global middleware
             if(authentication) {
